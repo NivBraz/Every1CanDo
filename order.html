@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Every1CanDoIt </title>
+		<link rel="stylesheet" href="includes/style.css" >
+		<script src="includes/script.js"></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<style>
+	       #map {
+	        height: 400px;
+	        width: 100%;
+	       }
+	    </style>
+	</head>
+	<body>
+		<header>
+			<a href="#" id="logo"> <span>Every One Can Do It</span> </a>		
+		</header>
+		<nav>
+			<ul class="ul_nav">
+				<li class="li_nav">
+					<a class="selected" href="#">רשימת אימונים</a>
+				</li>
+				<li class="li_nav">
+					<a href="#">מאמנים</a>
+				</li>
+				<li class="li_nav">
+					<a href="index.html"> פרטים אשיים</a>
+				</li>
+			</ul>
+		</nav>
+		<main>
+			<br />
+			<br />
+			<br />
+			<div id="orderWrapper">
+				<section id="date"></section>
+				<section id="time"></section>
+				<div id="map"></div>
+			</div>
+			
+		    <script>
+		      function initMap() {
+		        var uluru = {lat: 32.1008262, lng: 34.8117471};
+		        var map = new google.maps.Map(document.getElementById('map'), {
+		          zoom: 16,
+		          center: uluru
+		        });
+		        var marker = new google.maps.Marker({
+		          position: uluru,
+		          map: map
+		        });
+		      }
+		    </script>
+		    <script async defer
+		    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOmgeDd3BpBBy5N5cxGY48fZWBkPOJ-Pk&callback=initMap">
+		    </script>
+			<script>
+				var foo = getParameterByName('date'); 
+				var bar = getParameterByName('time');
+				document.getElementById("date").innerHTML = foo + " :תאריך";
+				document.getElementById("time").innerHTML = bar + " :שעה";
+			</script>
+		</main>
+		<footer>
+		</footer>
+	</body>
+	
+</html>
